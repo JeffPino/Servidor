@@ -6,7 +6,7 @@ def on_message(client, obj, msg):
 mqttc = mqtt.Client() 
 mqttc.on_message = on_message 
 mqttc.username_pw_set("jeffersson.pino@gmail.com/test","Pepino123") 
-mqttc.connect("maqiatto.com", 1883) 
+mqttc.connect("maqiatto.com", 3883) 
 mqttc.subscribe("jeffersson.pino@gmail.com/test", 0)
 rc=0
 print("Inicio...")
@@ -21,7 +21,7 @@ def on_message(client, obj, msg):
 mqttc = mqtt.Client() 
 mqttc.on_message = on_message 
 mqttc.username_pw_set("jeffersson.pino@gmail.com/test","Pepino123") 
-mqttc.connect("maqiatto.com", 1883) 
+mqttc.connect("maqiatto.com", 3883) 
 mqttc.subscribe("jeffersson.pino@gmail.com/test", 0)
 rc=0
 print("Inicio...")
