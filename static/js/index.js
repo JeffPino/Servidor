@@ -2,7 +2,7 @@
 
 function Alimentar() {
 	console.log("Se enviara alimento");
-	message = new Paho.MQTT.Message("Alimentar perro")
+	message = new Paho.MQTT.Message("Alimentar")
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
