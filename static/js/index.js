@@ -1,5 +1,11 @@
 //https://www.eclipse.org/paho/clients/js/
 
+function Alimentar() {
+	console.log("Se enviara alimento");
+	message = new Paho.MQTT.Message("Alimentar perro")
+	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
+    client.send(message);
+}
 function LED1_On() {
 	alert("led on");
 	console.log("led on");
@@ -22,7 +28,7 @@ function LED1_Off(){
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
-  client = new Paho.MQTT.Client("htpps://www.maqiatto.com", 3883, "web_" + parseInt(Math.random() * 100, 10));
+  client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
 
   // set callback handlers
   client.onConnectionLost = onConnectionLost;
