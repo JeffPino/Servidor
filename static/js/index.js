@@ -6,7 +6,7 @@ function App() {
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
-function Apm()) {
+function Apm() {
 	console.log("Se Alimentara un perro mediano");
 	message = new Paho.MQTT.Message("APM")
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
