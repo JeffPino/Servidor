@@ -1,27 +1,29 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function Alimentar() {
-	console.log("Se enviara alimento");
-	message = new Paho.MQTT.Message("Alimentar")
+function App() {
+	console.log("Se Alimentara un perro pequeño");
+	message = new Paho.MQTT.Message("APP")
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
-function LED1_On() {
-	alert("led on");
-	console.log("led on");
-	message = new Paho.MQTT.Message("LED1_ON")
-	message.destinationName="jeffersson.pino@gmail.com/test";
+function Apm()) {
+	console.log("Se Alimentara un perro mediano");
+	message = new Paho.MQTT.Message("APM")
+	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
-function LED1_Off(){	
-	console.log("led off");
-	message = new Paho.MQTT.Message("LED1_OFF")
-	message.destinationName="jeffersson.pino@gmail.com/test";
+function Apg() {
+	console.log("Se Alimentara un perro grande");
+	message = new Paho.MQTT.Message("APG")
+	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
-
-
-
+function Apx() {
+	console.log("Se Alimentara un perro gigante");
+	message = new Paho.MQTT.Message("APX")
+	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
+    client.send(message);
+}
 
 
 
