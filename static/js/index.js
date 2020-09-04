@@ -25,7 +25,7 @@ function Apx() {
     client.send(message);
 }
 
-
+// hola bb 
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
