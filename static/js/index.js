@@ -1,5 +1,8 @@
 //https://www.eclipse.org/paho/clients/js/
 
+function nivel(){
+	document.getElementById("tanto").innerHTML=mentrada+"%";
+}
 function App() {
 	console.log("Se Alimentara un perro pequeño");
 	message = new Paho.MQTT.Message("APP")
