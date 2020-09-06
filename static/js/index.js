@@ -81,6 +81,7 @@ function Apx() {
     document.getElementById("tanto").innerHTML=mentrada;
     if (mentrada == "0"){
 		alert("No hay alimento en el dispensador");
+	}
 
   }
   
