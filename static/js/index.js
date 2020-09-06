@@ -28,8 +28,7 @@ function Apx() {
     client.send(message);
 }
 
-// hola bb 
-// hola mami 
+
 
 
 // Create a client instance
@@ -79,5 +78,6 @@ function Apx() {
   function onMessageArrived(message) {
     console.log(message.payloadString);
     mentrada=message.payloadString;
+    document.getElementById("tanto").innerHTML=mentrada+"%";
   }
   
