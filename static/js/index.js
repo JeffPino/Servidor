@@ -74,6 +74,7 @@ function Apx() {
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("onMessageArrived:"+message.payloadString);
+    console.log(message.payloadString);
+    mentrada=message.payloadString;
   }
   
