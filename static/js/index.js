@@ -79,5 +79,9 @@ function Apx() {
     console.log(message.payloadString);
     mentrada=message.payloadString;
     document.getElementById("tanto").innerHTML=mentrada;
+    if mentrada=="0"{
+		alert("No hay alimento en el dispensador");
+	}
+.... 	
   }
   
