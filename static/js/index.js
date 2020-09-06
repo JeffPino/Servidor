@@ -1,7 +1,7 @@
 //https://www.eclipse.org/paho/clients/js/
 
 function App() {
-	document.write('<img src="static\images\RAZAPEQUEÑA.png"></img>')
+	document.write('<img src="static/images/RAZAPEQUEÑA.png"></img>')
 	document.getElementById('compq')
 	console.log("Se Alimentara un perro pequeño");
 	message = new Paho.MQTT.Message("APP")
