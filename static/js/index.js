@@ -1,13 +1,13 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function nivel(){
-	document.getElementById("tanto").innerHTML=mentrada+"%";
-}
 function App() {
+	document.write('<img src="\static\images\RAZAPEQUEÑA.png"')
+	document.getElementById('compq')
 	console.log("Se Alimentara un perro pequeño");
 	message = new Paho.MQTT.Message("APP")
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
+	
 }
 function Apm() {
 	console.log("Se Alimentara un perro mediano");
