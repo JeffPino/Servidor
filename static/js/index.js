@@ -78,6 +78,6 @@ function Apx() {
   function onMessageArrived(message) {
     console.log(message.payloadString);
     mentrada=message.payloadString;
-    document.getElementById("tanto").innerHTML=mentrada+"%";
+    document.getElementById("tanto").innerHTML=mentrada;
   }
   
