@@ -51,9 +51,9 @@ function Apx() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("jeffersson.pino@gmail.com/test");
-    message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "jeffersson.pino@gmail.com/test";
+    client.subscribe("jeffersson.pino@gmail.com/WEB");
+    message = new Paho.MQTT.Message("Enlace... OK!");
+    message.destinationName = "jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 	
   }
