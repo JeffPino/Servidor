@@ -104,8 +104,6 @@ function Apx() {
     console.log(message.payloadString);
     mentrada=message.payloadString;
     document.getElementById("tanto").innerHTML=mentrada;
-	document.getElementById("tanto1").innerHTML=mentrada;
-	document.getElementById("tanto2").innerHTML=mentrada;
 	c=1+1;
     if (mentrada == "0"){
 		alert("No hay alimento en el dispensador");
