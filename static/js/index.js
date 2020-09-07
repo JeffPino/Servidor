@@ -10,8 +10,14 @@ function Ocantidad() {
   } else {
     text = "Se enviara la cantidad de comida seleccionada";
 	console.log(x);
+	message = new Paho.MQTT.Message(x)
+	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
+	client.send(message);
+
+
   }
   document.getElementById("Respuestaoc").innerHTML = text;
+  
 }
 
 function App() {
