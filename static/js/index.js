@@ -1,5 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
-
+console.log(document.getElementById("cantidad"))
 function App() {
 	a='<center><img src="static/images/RAZAPEQUEÑA.png"></img></center>';
 	document.getElementById('compq').innerHTML=a;
