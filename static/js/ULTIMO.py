@@ -84,18 +84,31 @@ def alimentarx():
 		print("Se alimentara al perro")	
 		lcd_string("                    ",LCD_LINE_3)
 		
+def ocantidad(int a):
+		lcd_string("Cantidad definida",LCD_LINE_3)
+		b=((a*1)/10)
+		print(b)
+		GPIO.output(17, True)
+		time.sleep(b)
+		GPIO.output(17, False)
+		print("Se alimentara al perro")	
+		lcd_string("                    ",LCD_LINE_3)
+		
 def on_message(client, obj, msg): 
 	mensaje=(msg.payload.decode("utf-8"))
+	men=int(mensaje)
 	print(mensaje)
 	if mensaje=="APP":
 		alimentarp()
-	if mensaje=="APM":
+	elif mensaje=="APM":
 		alimentarm()
-	if mensaje=="APG":
+	elif mensaje=="APG":
 		alimentarg()
-	if mensaje=="APX":
+	elif mensaje=="APX":
 		alimentarx()
-
+	elif  men>0 and men<=30:
+		ocantidad(men)
+		
 def lcd_init():
   # Initialise display
   lcd_byte(0x33,LCD_CMD) # 110011 Initialise

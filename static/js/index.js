@@ -4,7 +4,7 @@ function Ocantidad() {
   x = document.getElementById("cantidad").value;
 
   // If x is Not a Number or less than one or greater than 10
-  if (isNaN(x) || x < 1 || x > 30) {
+  if (isNaN(x) || x < 1 ) {
     text = "La cantidad no es valida";
   } else {
     text = "Se enviara la cantidad de comida seleccionada";
