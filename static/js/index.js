@@ -1,7 +1,7 @@
 //https://www.eclipse.org/paho/clients/js/
 
 function App() {
-	a=<img src="static\images\RAZAPEQUEÑA.png">;
+	a='<img src="static\images\RAZAPEQUEÑA.png">';
 	document.getElementById('compq').innerHTML=a;
 	console.log("Se Alimentara un perro pequeño");
 	message = new Paho.MQTT.Message("APP")
@@ -10,7 +10,7 @@ function App() {
 	
 }
 function Apm() {
-	b=<img src="static\images\RAZAMEDIANA.png">;
+	b='<img src="static\images\RAZAMEDIANA.png">';
 	document.getElementById('compq').innerHTML=b;
 	console.log("Se Alimentara un perro mediano");
 	message = new Paho.MQTT.Message("APM")
@@ -18,7 +18,7 @@ function Apm() {
     client.send(message);
 }
 function Apg() {
-	c=<img src="static\images\RAZAGRANDE.png">;
+	c='<img src="static\images\RAZAGRANDE.png">';
 	document.getElementById('compq').innerHTML=c;
 	console.log("Se Alimentara un perro grande");
 	message = new Paho.MQTT.Message("APG")
@@ -26,7 +26,7 @@ function Apg() {
     client.send(message);
 }
 function Apx() {
-	d=<img src="static\images\RAZASGIGANTES.png">;
+	d='<img src="static\images\RAZASGIGANTES.png">';
 	document.getElementById('compq').innerHTML=d;
 	console.log("Se Alimentara un perro gigante");
 	message = new Paho.MQTT.Message("APX")
