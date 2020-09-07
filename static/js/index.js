@@ -1,5 +1,19 @@
 //https://www.eclipse.org/paho/clients/js/
 console.log(document.getElementById("cantidad"))
+function Ocantidad() {
+  var x, texto;
+  x = document.getElementById("cantidad").value;
+
+  // If x is Not a Number or less than one or greater than 10
+  if (isNaN(x) || x < 1 || x > 30) {
+    text = "La cantidad no es valida";
+  } else {
+    text = "Se enviara la cantidad de comida seleccionada";
+	console.log(x);
+  }
+  document.getElementById("Respuestaoc").innerHTML = text;
+}
+
 function App() {
 	a='<center><img src="static/images/RAZAPEQUEÑA.png"></img></center>';
 	document.getElementById('compq').innerHTML=a;
