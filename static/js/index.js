@@ -10,18 +10,24 @@ function App() {
 	
 }
 function Apm() {
+	a="<img src="static\images\RAZAMEDIANA.png">";
+	document.getElementById('compq').innerHTML=a;
 	console.log("Se Alimentara un perro mediano");
 	message = new Paho.MQTT.Message("APM")
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
 function Apg() {
+	a="<img src="static\images\RAZAGRANDE.png">";
+	document.getElementById('compq').innerHTML=a;
 	console.log("Se Alimentara un perro grande");
 	message = new Paho.MQTT.Message("APG")
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
 function Apx() {
+	a="<img src="static\images\RAZASGIGANTES.png">";
+	document.getElementById('compq').innerHTML=a;
 	console.log("Se Alimentara un perro gigante");
 	message = new Paho.MQTT.Message("APX")
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
