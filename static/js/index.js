@@ -1,5 +1,4 @@
 //https://www.eclipse.org/paho/clients/js/
-console.log(document.getElementById("cantidad"))
 function Ocantidad() {
   var x, texto;
   x = document.getElementById("cantidad").value;
