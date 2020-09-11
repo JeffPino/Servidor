@@ -84,13 +84,15 @@ def alimentarx():
 		print("Se alimentara al perro")	
 		lcd_string("                    ",LCD_LINE_3)
 		
-def ocantidad(int a):
-		lcd_string("Cantidad definida",LCD_LINE_3)
+def ocantidad(a):
+		lcd_string("Cant definida:",LCD_LINE_3)
+		lcd_string(str(a)+" g",POR)
 		b=((a*1)/10)
 		print(b)
 		GPIO.output(17, True)
 		time.sleep(b)
 		GPIO.output(17, False)
+
 		print("Se alimentara al perro")	
 		lcd_string("                    ",LCD_LINE_3)
 		
@@ -106,7 +108,7 @@ def on_message(client, obj, msg):
 		alimentarg()
 	elif mensaje=="APX":
 		alimentarx()
-	elif  men>0 and men<=30:
+	elif  men>0 :
 		ocantidad(men)
 		
 def lcd_init():
@@ -282,3 +284,4 @@ while rc == 0:
 	lcd_string("JEFF PINO",LCD_LINE_1)
 	time.sleep(0.5)
 	GPIO.cleanup()
+	
