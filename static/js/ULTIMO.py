@@ -50,7 +50,17 @@ GPIO.setup(24, GPIO.OUT)
 GPIO.setup(25, GPIO.OUT)
 GPIO.setup(26, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
+f=open("horario.txt","w")
 
+
+def check():
+	print("comparando")
+	datafile = file('horario.txt')
+	hora=datetime.datetime.now().strftime('%H : %M')
+	for line in datafile:
+		if hora in line:
+			alimentarx()
+			break
 
 def alimentarp():
 		lcd_string("PERRO PEQUENO",LCD_LINE_3)
@@ -99,7 +109,6 @@ def ocantidad(a):
 def on_message(client, obj, msg): 
 	mensaje=(msg.payload.decode("utf-8"))
 	print(mensaje)
-	men=int(mensaje)
 	print(mensaje)
 	if mensaje=="APP":
 		alimentarp()
@@ -109,8 +118,15 @@ def on_message(client, obj, msg):
 		alimentarg()
 	elif mensaje=="APX":
 		alimentarx()
-	elif  men>0 :
-		ocantidad(men)
+	else: 
+		print(mensaje)
+		f.write(mensaje+ "\n")
+		check()
+		#men=int(mensaje)
+		#console.log(men)
+		#if men>0 :
+		#	print("H")
+		#	ocantidad(men)
 		
 def lcd_init():
   # Initialise display
@@ -195,6 +211,7 @@ i=0
 while rc == 0:
 	rc = mqttc.loop()
 	lcd_string("ALIMENTADOR DE PERRO",LCD_LINE_2)
+	f.close()
 	if GPIO.input(16):
 	 mqttc.publish("jeffersson.pino@gmail.com/WEB", "100")
 	 lcd_string("100%",POR)
@@ -293,3 +310,4 @@ while rc == 0:
 		alimentarg()
 	if GPIO.input(5):
 		alimentarx()
+ 

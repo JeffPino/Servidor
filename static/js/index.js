@@ -89,9 +89,7 @@ function Apx() {
     console.log("Conectado...");
 	
     client.subscribe("jeffersson.pino@gmail.com/WEB");
-    message = new Paho.MQTT.Message("Enlace... OK!");
-    message.destinationName = "jeffersson.pino@gmail.com/Alimentador";
-    client.send(message);
+
 	
   }
 
