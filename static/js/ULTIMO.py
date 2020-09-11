@@ -98,6 +98,7 @@ def ocantidad(a):
 		
 def on_message(client, obj, msg): 
 	mensaje=(msg.payload.decode("utf-8"))
+	print(mensaje)
 	men=int(mensaje)
 	print(mensaje)
 	if mensaje=="APP":
