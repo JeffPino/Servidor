@@ -284,4 +284,11 @@ while rc == 0:
 	lcd_string("JEFF PINO",LCD_LINE_1)
 	time.sleep(0.5)
 	GPIO.cleanup()
-	
+	if GPIO.input(2):
+		alimentarp()
+	if GPIO.input(3):
+		alimentarm()
+	if GPIO.input(4):
+		alimentarg()
+	if GPIO.input(5):
+		alimentarx()
