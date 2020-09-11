@@ -2,7 +2,7 @@
 function hora(){
 	h = document.getElementById("hselec").value;
 	console.log(h);
-	message = new Paho.MQTT.Message(h)
+	message = new Paho.MQTT.Message(str(h))
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
 	client.send(message);
 }
