@@ -51,10 +51,10 @@ GPIO.setup(24, GPIO.OUT)
 GPIO.setup(25, GPIO.OUT)
 GPIO.setup(26, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
+f=open("horario.txt","w")
 
 def buscando():
 	hora=datetime.datetime.now().strftime('%H:%M')
-	print(hora)
 	f=open("horario.txt","r")
 	horario = f.read() 
 	if horario==hora:
@@ -115,8 +115,9 @@ def ocantidad(a):
 		lcd_string("                    ",LCD_LINE_3)
 		
 def on_message(client, obj, msg): 
-	mensaje=(msg.payload.decode("utf-8"))
-	print(mensaje)
+	mensaje=(msg.payload.decode("utf-8")).split(" ")[0]
+	dato=(msg.payload.decode("utf-8")).split(" ")[1]
+	print(mensaje + dato)
 	if mensaje=="APP":
 		alimentarp()
 	elif mensaje=="APM":
@@ -125,15 +126,14 @@ def on_message(client, obj, msg):
 		alimentarg()
 	elif mensaje=="APX":
 		alimentarx()
-	else: 
+	elif mensaje =="H":
 		f=open("horario.txt","w")
-		f.write(mensaje)
+		f.write(dato)
 		f.close()
-		#men=int(mensaje)
-		#console.log(men)
-		#if men>0 :
-		#	print("H")
-		#	ocantidad(men)
+	elif mensaje=="C":
+		men=int(dato)
+		print("H")
+		ocantidad(men)
 		
 def lcd_init():
   # Initialise display
