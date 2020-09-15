@@ -2,9 +2,9 @@
 function hora(){
 	h = document.getElementById("hselec").value;
 	console.log(h);
-	message = new Paho.MQTT.Message(h)
+	message = new Paho.MQTT.Message("H "+h)
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
-	client.send("H" + message);
+	client.send(message);
 }
 
 function Ocantidad() {
@@ -17,9 +17,9 @@ function Ocantidad() {
   } else {
     text = "Se enviara la cantidad de comida seleccionada";
 	console.log(x);
-	message = new Paho.MQTT.Message(x)
+	message = new Paho.MQTT.Message("C " +x)
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
-	client.send("C "+message);
+	client.send(message);
 
 
   }
