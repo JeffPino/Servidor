@@ -31,7 +31,7 @@ function App() {
 	a='<center><img src="static/images/RAZAPEQUEÑA.png"></img></center>';
 	document.getElementById('compq').innerHTML=a;
 	console.log("Se Alimentara un perro pequeño");
-	message = new Paho.MQTT.Message("APP")
+	message = new Paho.MQTT.Message("APP "+ 1)
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 	
@@ -40,7 +40,7 @@ function Apm() {
 	b='<center><img src="static/images/RAZAMEDIANA.png"></img></center>';
 	document.getElementById('compq').innerHTML=b;
 	console.log("Se Alimentara un perro mediano");
-	message = new Paho.MQTT.Message("APM")
+	message = new Paho.MQTT.Message("APM "+ 1)
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
@@ -56,7 +56,7 @@ function Apx() {
 	d='<center><img src="static/images/RAZASGIGANTES.png"></img></center>';
 	document.getElementById('compq').innerHTML=d;
 	console.log("Se Alimentara un perro gigante");
-	message = new Paho.MQTT.Message("APX")
+	message = new Paho.MQTT.Message("APX "+ 1)
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
     client.send(message);
 }
