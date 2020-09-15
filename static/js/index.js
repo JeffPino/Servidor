@@ -4,7 +4,7 @@ function hora(){
 	console.log(h);
 	message = new Paho.MQTT.Message(h)
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
-	client.send(message);
+	client.send("H" + message);
 }
 
 function Ocantidad() {
@@ -19,7 +19,7 @@ function Ocantidad() {
 	console.log(x);
 	message = new Paho.MQTT.Message(x)
 	message.destinationName="jeffersson.pino@gmail.com/Alimentador";
-	client.send(message);
+	client.send("C "+message);
 
 
   }

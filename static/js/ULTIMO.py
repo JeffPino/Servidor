@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import paho.mqtt.client as mqtt 
+import datetime
 
 LCD_RS = 6
 LCD_E  = 7
@@ -50,25 +51,32 @@ GPIO.setup(24, GPIO.OUT)
 GPIO.setup(25, GPIO.OUT)
 GPIO.setup(26, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
-f=open("horario.txt","w")
 
-
-def check():
-	print("comparando")
-	datafile = file('horario.txt')
-	hora=datetime.datetime.now().strftime('%H : %M')
-	for line in datafile:
-		if hora in line:
-			alimentarx()
-			break
-
+def buscando():
+	hora=datetime.datetime.now().strftime('%H:%M')
+	print(hora)
+	f=open("horario.txt","r")
+	horario = f.read() 
+	if horario==hora:
+		programada(horario)
+	f.close()
+	
+def programada(horario):
+	lcd_string("Horario:     "+ horario,LCD_LINE_3)
+	GPIO.output(17, True)
+	time.sleep(10)
+	GPIO.output(17, False)
+	print("Se alimentara al perro")
+	lcd_string("                    ",LCD_LINE_3)
+	time.sleep(50)
+		
 def alimentarp():
 		lcd_string("PERRO PEQUENO",LCD_LINE_3)
 		GPIO.output(17, True)
 		time.sleep(2)
 		GPIO.output(17, False)
 		print("Se alimentara al perro")
-		lcd_string("PERRO PEQUENO",LCD_LINE_3)
+		lcd_string("                    ",LCD_LINE_3)
 
 def alimentarm():
 		lcd_string("PERRO MEDIANO",LCD_LINE_3)
@@ -109,7 +117,6 @@ def ocantidad(a):
 def on_message(client, obj, msg): 
 	mensaje=(msg.payload.decode("utf-8"))
 	print(mensaje)
-	print(mensaje)
 	if mensaje=="APP":
 		alimentarp()
 	elif mensaje=="APM":
@@ -119,9 +126,9 @@ def on_message(client, obj, msg):
 	elif mensaje=="APX":
 		alimentarx()
 	else: 
-		print(mensaje)
-		f.write(mensaje+ "\n")
-		check()
+		f=open("horario.txt","w")
+		f.write(mensaje)
+		f.close()
 		#men=int(mensaje)
 		#console.log(men)
 		#if men>0 :
@@ -211,7 +218,7 @@ i=0
 while rc == 0:
 	rc = mqttc.loop()
 	lcd_string("ALIMENTADOR DE PERRO",LCD_LINE_2)
-	f.close()
+	buscando()
 	if GPIO.input(16):
 	 mqttc.publish("jeffersson.pino@gmail.com/WEB", "100")
 	 lcd_string("100%",POR)
